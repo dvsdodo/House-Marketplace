@@ -29,7 +29,8 @@ function SignIn() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
 
       if(userCredential.user) {
-        navigate("/")
+        navigate("/");
+        toast("Welcome to House Marketplace " + userCredential.user.displayName);
       };
     } catch (error) {
       toast.error("Bad User Credentials");
